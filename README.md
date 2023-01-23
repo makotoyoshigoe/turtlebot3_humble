@@ -14,7 +14,7 @@ This package is designed to allow ROS2 (humble) to simulate robots using turtleb
     - Build
         ```
         rosdep update
-        rosdep install -y -r -i --from-paths src --ignore-src--rosdistro $ROS_DISTRO
+	rosdep install -y -r -i --from-paths src --ignore-src --rosdistro $ROS_DISTRO
         colcon build --symlink-install
         ```
 - Navigation
