@@ -2,6 +2,8 @@
 This package allows you to simulate turtlebot3 in ROS2(humble).
 
 # Enviroment
+- OS: Ubuntu 22.04.1 LTS
+- ROS2: humble
 
 # How to use
 - Setup
