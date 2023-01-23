@@ -1,5 +1,5 @@
 # About this package
-This package allows you to simulate turtlebot3 in ROS2(humble).
+This package is designed to allow ROS2 (humble) to simulate robots using turtlebot3.
 
 # Enviroment
 - OS: Ubuntu 22.04.1 LTS
