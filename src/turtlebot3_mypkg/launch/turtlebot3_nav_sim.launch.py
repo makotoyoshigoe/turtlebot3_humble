@@ -4,19 +4,27 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 
 def generate_launch_description():
-    os.environ['TURTLEBOT3_MODEL'] = "burger"
-    gazebo_launch_share_dir = get_package_share_directory("turtlebot3_gazebo")
-    nav2_launch_share_dir = get_package_share_directory("turtlebot3_navigation2")
-    print(gazebo_launch_share_dir, nav2_launch_share_dir)
+    os.environ['TURTLEBOT3_MODEL'] = 'burger'
+    gazebo_launch_share_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch', 'turtlebot3_world.launch.py')
+    nav2_launch_share_dir = os.path.join(get_package_share_directory('turtlebot3_navigation2'), 'launch', 'navigation2.launch.py')
 
     gazebo_launch = launch.actions.IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([gazebo_launch_share_dir + "/launch/turtlebot3_world.launch.py"])
+        PythonLaunchDescriptionSource(
+            os.path.join(gazebo_launch_share_dir)
+        )
     )
 
-    # nav2_launch = launch.actions.IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([nav2_launch_share_dir + "/launch/turtlebot3_navigation2.launch.py"])
-    #     # launch_arguments={
-    #     #     "use_sim_time": "true"
-    #     # }.items()
-    # )
-    return launch.LaunchDescription([gazebo_launch])
+    nav2_launch = launch.actions.IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(nav2_launch_share_dir)
+        ), 
+        launch_arguments={
+            'use_sim_time': 'true'
+        }.items()
+    )
+    
+    ld = launch.LaunchDescription()
+    ld.add_action(nav2_launch)
+    ld.add_action(gazebo_launch)
+    
+    return ld
