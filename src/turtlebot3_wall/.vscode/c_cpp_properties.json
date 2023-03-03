@@ -1,0 +1,34 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ubuntu/turtlebot3_humble/install/turtlebot3_fake_node/include/**",
+        "/home/ubuntu/turtlebot3_humble/install/turtlebot3_msgs/include/**",
+        "/home/ubuntu/turtlebot3_humble/install/turtlebot3_gazebo/include/**",
+        "/home/ubuntu/turtlebot3_humble/install/dynamixel_sdk_custom_interfaces/include/**",
+        "/home/ubuntu/turtlebot3_humble/install/dynamixel_sdk/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/DynamixelSDK/dynamixel_sdk/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/DynamixelSDK/dynamixel_sdk_examples/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/hls_lfcd_lds_driver/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/ld08_driver/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/turtlebot3/turtlebot3_node/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/turtlebot3_mypkg/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/turtlebot3_simulations/turtlebot3_fake_node/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/ubuntu/turtlebot3_humble/src/turtlebot3_wall/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
