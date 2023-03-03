@@ -22,8 +22,22 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+add_executable(sub_laser
+  src/sub_laser.cpp
+)
+
+ament_target_dependencies(sub_laser
+  rclcpp
+  sensor_msgs
+)
+
 install(DIRECTORY launch models
   DESTINATION share/${PROJECT_NAME}/
+)
+
+install(TARGETS
+  sub_laser
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
