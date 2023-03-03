@@ -20,18 +20,17 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-
 def generate_launch_description():
     # Get the urdf file
     TURTLEBOT3_MODEL = 'burger'
     model_folder = 'turtlebot3_' + TURTLEBOT3_MODEL
     urdf_path = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('turtlebot3_wall'),
         'models',
         model_folder,
         'model.sdf'
     )
-
+    
     # Launch configuration variables specific to simulation
     x_pose = LaunchConfiguration('x_pose', default='0.0')
     y_pose = LaunchConfiguration('y_pose', default='0.0')
