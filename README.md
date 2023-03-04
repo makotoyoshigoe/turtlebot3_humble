@@ -9,7 +9,7 @@ This package is designed to allow ROS2 (humble) to simulate robots using turtleb
 - Setup
     - Clone
         ```
-        git clone --recursive https://github.com/makotoyoshigoe/turtlebot3_humble.git
+        git clone --recursive git@github.com:makotoyoshigoe/turtlebot3_humble.git
         ```
     - Build
         ```
