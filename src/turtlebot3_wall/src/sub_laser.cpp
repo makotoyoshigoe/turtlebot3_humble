@@ -1,21 +1,23 @@
-#include<rclcpp/rclcpp.hpp>
-#include<rclcpp/qos.hpp>
-#include<sensor_msgs/msg/laser_scan.hpp>
+#include"turtlebot3_wall/sub_laser.hpp"
 #include<iostream>
 
-void scan_callback(const sensor_msgs::msg::LaserScan msg){
-    std::cout << "subscribe scan" << std::endl;
-}
+namespace Turtlebot3Wall
+{
+    void SubLaser::scanCallback(const sensor_msgs::msg::LaserScan msg){
+        ++scan_count;
+        RCLCPP_INFO(get_logger(), "Subscribed count: %d", scan_count);
+        // std::cout << scan_count << std::endl;
+    }
 
-int main(int argc, char* argv[]){
-    rclcpp::init(argc, argv);
+    SubLaser::SubLaser()
+    : Node("sub_laser"), count_(0)
+    {
+        scan_count = 0;
+        initSubscription();
+    }
 
-    auto node = rclcpp::Node::make_shared("sub_laser");
-    auto scan_subscription = node->create_subscription<sensor_msgs::msg::LaserScan>("scan", rclcpp::QoS(10), std::bind(scan_callback, std::placeholders::_1));
-
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-
-    node = nullptr;
-    return 0;
+    void SubLaser::initSubscription()
+    {
+        scan_subscription_ = this->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, std::bind(&SubLaser::scanCallback, this, std::placeholders::_1));
+    }
 }
