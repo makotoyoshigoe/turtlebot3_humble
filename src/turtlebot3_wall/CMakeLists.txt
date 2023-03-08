@@ -11,14 +11,12 @@ ament_auto_find_build_dependencies()
 
 include_directories(include)
 ament_auto_add_library(${PROJECT_NAME} SHARED
- src/sub_laser.cpp include/${PROJECT_NAME}/sub_laser.hpp)
+ src/run_along_wall.cpp include/${PROJECT_NAME}/run_along_wall.hpp)
 
-ament_auto_add_executable(sub_laser
-  src/sub_laser.cpp
-  src/sub_laser_node.cpp
+ament_auto_add_executable(run_along_wall
+  src/run_along_wall.cpp
+  src/run_along_wall_node.cpp
 )
-
-# target_link_libraries(sub_laser)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -27,9 +25,8 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_auto_package(INSTAL_TO_SHARE
-  launch
+ament_auto_package(INSTALL_TO_SHARE
   models
+  config
+  launch
 )
-
-# ament_package()
