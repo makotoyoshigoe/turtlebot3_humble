@@ -1,11 +1,11 @@
-# About this package
-This package is designed to allow ROS2 (humble) to simulate robots using turtlebot3.
+# turtlebot3-humble
+ROS2 humbleでturtlebot3を使ったシミュレーションをできるようにするためのリポジトリ
 
-# Enviroment
+# 動作環境
 - OS: Ubuntu 22.04.1 LTS
 - ROS2: humble
 
-# How to use
+# 使用方法
 - Setup
     - Clone
         ```
@@ -18,12 +18,12 @@ This package is designed to allow ROS2 (humble) to simulate robots using turtleb
         colcon build --symlink-install
         ```
 - Navigation
-    - First terminal: Launch gazebo
+    1. シミュレータの起動
         ```
         source ~/turtlebot3_humble/install/setup.bash
         ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
         ```
-    - Second terminal: Launch navigation stack
+    2.  ナビゲーションの実行
         ```
         source ~/turtlebot3_humble/install/setup.bash
         ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=true
