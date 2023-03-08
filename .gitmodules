@@ -22,3 +22,7 @@
 	path = src/ld08_driver
 	url = https://github.com/ROBOTIS-GIT/ld08_driver.git
 	branch = humble-devel
+[submodule "src/turtlebot3_wall"]
+	path = src/turtlebot3_wall
+	url = https://github.com/makotoyoshigoe/turtlebot3_wall.git
+	branch = master
