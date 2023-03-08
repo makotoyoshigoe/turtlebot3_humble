@@ -1,6 +1,6 @@
 /**:
   ros__parameters:
-    distance_from_wall: 0.5
+    distance_from_wall: 0.55
     distance_to_stop: 0.3
     max_linear_vel: 0.22
     max_angular_vel: 2.84
