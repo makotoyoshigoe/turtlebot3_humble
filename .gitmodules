@@ -26,3 +26,7 @@
 	path = src/turtlebot3_wall
 	url = https://github.com/makotoyoshigoe/turtlebot3_wall.git
 	branch = master
+[submodule "src/wall_tracking"]
+	path = src/wall_tracking
+	url = https://github.com/makotoyoshigoe/wall_tracking.git
+	branch = master
